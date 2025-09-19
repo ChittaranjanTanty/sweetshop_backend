@@ -5,6 +5,6 @@ const { createUser } = require('../controllers/userController');
 // Routers are used for segregating your routes in different modules
 const userRouter = express.Router();  
 
-userRouter.post('/', createUser); // this is a route registration
+userRouter.post('/register', createUser); // this is a route registration
 
 module.exports = userRouter; // exporting the router

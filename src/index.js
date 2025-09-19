@@ -23,8 +23,8 @@ app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 
 // Routing middlewares
-app.use('/users', userRouter);
-app.use('/auth', authRouter);
+app.use('/api/auth', userRouter);
+app.use('/api/auth', authRouter);
 
 app.get('/ping', (req, res) => {
     console.log(req.body);
