@@ -7,13 +7,15 @@ const connectDB = require('./config/dbConfig');
 
 const userRouter = require('./routes/userRoute');
 const authRouter = require('./routes/authRoute');
+const sweetRouter = require("./routes/sweetRoute");
 
 const app = express();
 
 const corsOptions = {
-    origin: '*', // Allow requests from any origin
-    methods: 'GET,POST,PUT,DELETE,OPTIONS', // Allowed HTTP methods
-    allowedHeaders: 'Content-Type,Authorization', // Allowed headers
+    origin: '*', // frontend URL
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization',
+    credentials: true // <--- allow cookies
 };
 
 app.use(cors(corsOptions));
@@ -25,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routing middlewares
 app.use('/api/auth', userRouter);
 app.use('/api/auth', authRouter);
+app.use("/api/sweets", sweetRouter);
 
 app.get('/ping', (req, res) => {
     console.log(req.body);
