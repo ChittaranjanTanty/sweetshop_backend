@@ -12,7 +12,7 @@ const sweetRouter = require("./routes/sweetRoute");
 const app = express();
 
 const corsOptions = {
-    origin: '*', // frontend URL
+    origin: 'process.env.FRONTEND_URL', // frontend URL
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true // <--- allow cookies
