@@ -5,6 +5,6 @@ const { login, logout } = require('../controllers/authController');
 // Routers are used for segregating your routes in different modules
 const authRouter = express.Router();  
 
-authRouter.post('/', login); // this is a route registration
+authRouter.post('/login', login); // this is a route registration
 authRouter.post('/logout', logout);
 module.exports = authRouter; // exporting the router
