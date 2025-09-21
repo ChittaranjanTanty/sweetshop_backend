@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routing middlewares
 app.use('/api/auth', userRouter);
-app.use('/api/auth', authRouter);
+app.use('/api/auth/login', authRouter);
 app.use("/api/sweets", sweetRouter);
 
 app.get('/ping', (req, res) => {
